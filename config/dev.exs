@@ -20,7 +20,7 @@ use Mix.Config
 # configured to run both http and https servers on
 # different ports.
 config :phoduxQL, PhoduxQL.Endpoint,
-  http: [port: 4000],
+  http: [port: 8000],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,

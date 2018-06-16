@@ -18,5 +18,5 @@ cleaning = %Task{name: "Dry Cleaning", description: "Pick up shirts"}
 tuesday = %Note{name: "Tuesday", tasks: [cleaning]} |> Repo.insert!
 
 %Note{name: "Monday", tasks: [groceries, gas]} |> Repo.insert!
-Ecto.build_assoc(tuesday, :task, cleaning) |> Repo.insert!
+Ecto.build_assoc(tuesday, :tasks, cleaning) |> Repo.insert!
 

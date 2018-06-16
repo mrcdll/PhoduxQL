@@ -5,7 +5,12 @@ defmodule PhoduxQL.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", PhoduxQL do
+  scope "/" do
     pipe_through :api
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+      schema: PhoduxQL.Schema,
+      interface: :simple,
+      context: %{pubsub: PhoduxQL.Endpoint}
   end
 end
