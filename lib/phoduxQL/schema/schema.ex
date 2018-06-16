@@ -1,15 +1,12 @@
 defmodule PhoduxQL.Schema do
   use Absinthe.Schema
+  import_types PhoduxQL.Schema.Types
 
   alias PhoduxQL.NoteResolver
 
-  object :note do
-    field :id, non_null(:id)
-    field :name, non_null(:string)
-  end
 
   query do
-    field :all_notes, non_null(list_of(non_null(:note))) do
+    field :all_notes, list_of(:note) do
       resolve &NoteResolver.all_notes/3
     end
   end

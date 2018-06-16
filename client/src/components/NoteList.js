@@ -8,6 +8,10 @@ const NOTES_QUERY = gql`
     allNotes {
       id
       name
+      tasks {
+        id
+        description
+      }
     }
   }
 `
@@ -31,3 +35,4 @@ class NoteList extends Component {
 }
 
 export default graphql(NOTES_QUERY, { name: 'allNotes' }) (NoteList)
+

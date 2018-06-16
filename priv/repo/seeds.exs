@@ -12,10 +12,10 @@
 
 alias PhoduxQL.{Repo, Note, Task}
 
-groceries = %Task{name: "Groceries", description: "Buy Milk and Tuna"}
-gas = %Task{name: "Car", description: "Put gas"}
-cleaning = %Task{name: "Dry Cleaning", description: "Pick up shirts"}
-tuesday = %Note{name: "Tuesday", tasks: [cleaning]} |> Repo.insert!
+groceries = %Task{description: "Buy Milk and Tuna"}
+gas = %Task{description: "Put gas"}
+cleaning = %Task{description: "Pick up shirts"}
+tuesday = %Note{name: "Tuesday"} |> Repo.insert!
 
 %Note{name: "Monday", tasks: [groceries, gas]} |> Repo.insert!
 Ecto.build_assoc(tuesday, :tasks, cleaning) |> Repo.insert!

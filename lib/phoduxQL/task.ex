@@ -5,7 +5,6 @@ defmodule PhoduxQL.Task do
 
   schema "tasks" do
     field :description, :string
-    field :name, :string
     belongs_to :note, PhoduxQL.Note
 
     timestamps()
@@ -14,7 +13,7 @@ defmodule PhoduxQL.Task do
   @doc false
   def changeset(task, attrs) do
     task
-    |> cast(attrs, [:name, :description])
-    |> validate_required([:name, :description])
+    |> cast(attrs, [:description])
+    |> validate_required([:description])
   end
 end
