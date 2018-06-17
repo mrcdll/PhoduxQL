@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import { graphql } from 'react-apollo'
+import { graphql, Mutation } from 'react-apollo'
 import gql from 'graphql-tag'
-import { Mutation } from "react-apollo";
-import { compose } from 'react-apollo';
 
 class NewNote extends Component {
 
