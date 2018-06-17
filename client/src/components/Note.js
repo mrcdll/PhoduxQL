@@ -10,26 +10,14 @@ class Note extends Component {
     )
 
     return (
-      <Card>
-          <Title>{this.props.note.name}</Title>
+      <div>
+          <div>{this.props.note.name}</div>
           <ul>
             {taskList}
           </ul>
-      </Card>
+      </div>
     )
   }
 }
 
 export default Note
-
-const Card = styled.div`
-  width: 250px;
-  height: 250px;
-  background-color: papayawhip;
-  margin: 0.5% 5%;
-`
-
-const Title = styled.div`
-  text-align: center;
-  margin: 5% 0;
-`
